@@ -1,13 +1,15 @@
-def insertionSort(arr):
-    for i in range(1, len(arr)):
-        key = arr[i]
-        j = i - 1
-        while j >= 0 and key < arr[j]:
-            arr[j + 1] = arr[j]
-            j -= 1
-        arr[j + 1] = key
+def bubbleSort(arr):
+    n = len(arr)
+ 
+    for i in range(n-1):
+   
+ 
 
-        
+        for j in range(0, n-i-1):
+
+            if arr[j] > arr[j + 1] :
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+ 
 while True:
     try:
         a = int(input("Wpisz liczbe nr 1: "))
@@ -20,14 +22,11 @@ while True:
     except ValueError:
         print("Wpisales zla liczbe! Musisz wpisac liczbe calkowita by program zadzialal!")
         
-        
-if(a<0 or b<0 or c<0 or d<0 or e<0 or f<0):
-    print("Liczby musza byc dodatnie!")
-else:
-    arr = [a,b,c,d,e,f]
-    print("Twoja lista do posortowania: ",arr)
 
-    insertionSort(arr)
-    print("Lista posortowana:")
-    for i in range(len(arr)):
-        print("%d" % arr[i])
+arr = [a, b, c, d, e, f]
+ 
+bubbleSort(arr)
+ 
+print ("Sorted array is:")
+for i in range(len(arr)):
+    print ("% d" % arr[i]),
